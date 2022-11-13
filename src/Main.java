@@ -20,11 +20,15 @@ public class Main {
         Truck man = new Truck("MAN", "10", 6.9);
 
         System.out.println(lada);
-        lada.start();
+        lada.maxSpeed();
+
         System.out.println(ford);
         ford.start();
+        ford.bestTime();
+
         System.out.println(nissan);
         nissan.finish();
+        nissan.pitStop();
 
 
     }
