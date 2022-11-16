@@ -1,6 +1,4 @@
-import dz1.Bus;
-import dz1.Car;
-import dz1.Truck;
+import dz1.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,18 +17,17 @@ public class Main {
         Truck hyndai = new Truck("Hyndai", "Gold", 7.9);
         Truck man = new Truck("MAN", "10", 6.9);
 
-        System.out.println(lada);
-        lada.maxSpeed();
+        DriverB driver1 = new DriverB(" Сумцов Владислав Владимирович", "В", 1.5);
+        driver1.startMove(ford);
+        driver1.refill(gaz);
+        driver1.stopMove(volkswagen);
 
-        System.out.println(ford);
-        ford.start();
-        ford.bestTime();
+        DriverC driver2 = new DriverC("Глушков Максим Александрович", "С", 5.5);
+        driver2.startMove(lada);
+        driver2.stopMove(bmv);
 
-        System.out.println(nissan);
-        nissan.finish();
-        nissan.pitStop();
-
-
+        DriverD driver3 = new DriverD("Карпов Михайл Владимирович", "D", 7.5);
+        driver3.startMove(faw);
     }
 
 }
