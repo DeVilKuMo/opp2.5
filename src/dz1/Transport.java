@@ -27,6 +27,8 @@ public abstract class Transport {
 
     public abstract void finish();
 
+    public abstract void printType();
+
     public void infoOfVehicle(){
         System.out.println("Информация о транспортном средстве:");
     }

@@ -2,8 +2,16 @@ package dz1;
 
 public class Car extends Transport implements Competing {
 
-    public Car(String brand, String model, double engineCapacity) {
+    private TypeOfBody typeOfBody;
+
+    public Car(String brand, String model, double engineCapacity,TypeOfBody typeOfBody) {
         super(brand, model, engineCapacity);
+        this.typeOfBody = typeOfBody;
+    }
+
+
+    public TypeOfBody getTypeOfBody() {
+        return typeOfBody;
     }
 
     @Override
@@ -14,6 +22,16 @@ public class Car extends Transport implements Competing {
     @Override
     public void finish() {
         System.out.println("закончить движение");
+    }
+
+    @Override
+    public void printType() {
+        if (typeOfBody==null){
+            System.out.println("Данных по авто недостаточно ");
+        }else {
+            System.out.println(" Тип кузова авто:"+typeOfBody);
+        }
+
     }
 
     @Override

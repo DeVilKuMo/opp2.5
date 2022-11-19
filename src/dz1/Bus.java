@@ -2,8 +2,19 @@ package dz1;
 
 public class Bus extends Transport implements Competing {
 
-    public Bus(String brand, String model, double engineCapacity) {
+    private Capacity capacity;
+
+    public Bus(String brand, String model, double engineCapacity,Capacity capacity) {
         super(brand, model, engineCapacity);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 
     @Override
@@ -14,6 +25,17 @@ public class Bus extends Transport implements Competing {
     @Override
     public void finish() {
         System.out.println("закончить движение");
+    }
+
+    @Override
+    public void printType() {
+        if (capacity==null){
+            System.out.println("Данных по авто недостаточно ");
+        }else {
+
+            System.out.println(" Вместимость автобуса: от:"+capacity.getFrom()+" до "+capacity.getFrom());
+        }
+
     }
 
     @Override

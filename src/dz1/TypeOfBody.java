@@ -9,5 +9,6 @@ public enum TypeOfBody {
     CROSSOVER,
     PICKUP_TRUCK,
     VAN,
-    MINIVAN
+    MINIVAN;
+
 }
