@@ -17,6 +17,10 @@ public class Main {
         Truck hyndai = new Truck("Hyndai", "Gold", 7.9,Weight.N3);
         Truck man = new Truck("MAN", "10", 6.9,Weight.N3);
 
+        service(lada,bmv,kia,skoda,
+                ford,iveco,gaz,volkswagen,
+                nissan,faw,hyndai,man);
+
 
         DriverB driver1 = new DriverB(" Сумцов Владислав Владимирович", "В", 1.5);
         printInfo(driver1,lada);
@@ -28,6 +32,24 @@ public class Main {
         printInfo(driver3,faw);
 
     }
+
+    private static void service(Transport...transport){
+        for (Transport value : transport) {
+            serviceTransport(value);
+        }
+
+    }
+
+    private static void serviceTransport(Transport transport){
+        try {
+            if (!transport .service()){
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + " " + transport.getModel() + " не прошел диагностику");
+            }
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     private static void printInfo(Driver<?> driver,Transport transport){
         System.out.println("Водитель:" + driver.getfIo()+" управляет автомобилем " +transport.getBrand()+" "+
                 " и будет участвовать заезде" );

@@ -29,6 +29,8 @@ public abstract class Transport {
 
     public abstract void printType();
 
+    public abstract boolean service();
+
     public void infoOfVehicle(){
         System.out.println("Информация о транспортном средстве:");
     }
@@ -41,4 +43,6 @@ public abstract class Transport {
                 ", объем двигателя=" + engineCapacity +
                 '}';
     }
+
+
 }

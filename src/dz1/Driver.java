@@ -5,13 +5,20 @@ public abstract class Driver< A extends  Transport  >  {
     private String driverLicense;
     private Double experience;
 
+    private A category;
 
 
+    public Driver(String fIo, String driverLicense, Double experience, A category) {
+        this.fIo = fIo;
+        this.driverLicense = driverLicense;
+        this.experience = experience;
+        this.category = category;
+    }
 
     public Driver(String fIo, String driverLicense, Double experience) {
         this.fIo = fIo;
         this.driverLicense = driverLicense;
-        this.experience = experience;
+       setCategory(category);
 
     }
 
@@ -39,6 +46,16 @@ public abstract class Driver< A extends  Transport  >  {
         this.experience = experience;
     }
 
+    public A getCategory() {
+        return category;
+    }
+
+    public void setCategory(A category) {
+        if (category==null){
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        }
+        this.category = category;
+    }
 
     public abstract void startMove(A transport);
 
