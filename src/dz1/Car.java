@@ -1,5 +1,7 @@
 package dz1;
 
+import java.util.List;
+
 public class Car extends Transport implements Competing {
 
     private TypeOfBody typeOfBody;
@@ -37,6 +39,11 @@ public class Car extends Transport implements Competing {
     @Override
     public boolean service() {
         return Math.random()>0.7;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починенна!");
     }
 
     @Override

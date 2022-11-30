@@ -22,6 +22,9 @@ public abstract class Driver< A extends  Transport  >  {
 
     }
 
+    private void setCategory(A category) {
+    }
+
     public String getfIo() {
         return fIo;
     }
@@ -50,12 +53,12 @@ public abstract class Driver< A extends  Transport  >  {
         return category;
     }
 
-    public void setCategory(A category) {
-        if (category==null){
-            throw new IllegalArgumentException("Необходимо указать категорию прав!");
-        }
-        this.category = category;
-    }
+//    public void setCategory(A category) {
+//        if (category==null){
+//            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+//        }
+//        this.category = category;
+//    }
 
     public abstract void startMove(A transport);
 
@@ -66,10 +69,7 @@ public abstract class Driver< A extends  Transport  >  {
 
     @Override
     public String toString() {
-        return "Водитель{" +
-                "ФИО:='" + fIo + '\'' +
-                ", Наличие водительских прав: ='" + driverLicense + '\'' +
-                ", Стаж: =" + experience +
-                '}';
+        return fIo+" Стаж воджения: "+driverLicense+" лет , категория: "+category;
+
     }
 }

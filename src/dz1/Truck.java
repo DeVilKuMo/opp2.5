@@ -62,4 +62,9 @@ public class Truck extends Transport implements Competing {
         System.out.println( " Лучшая скорость круга у машины");
 
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " починенн!");
+    }
 }
