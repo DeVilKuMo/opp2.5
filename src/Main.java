@@ -47,6 +47,14 @@ public class Main {
 
 
         List<Transport>transports=List.of(car, truck, bus);
+
+        ServiseStation serviseStation = new ServiseStation();
+        serviseStation.addCar(car);
+        serviseStation.addTuck(truck);
+        serviseStation.service();
+        serviseStation.service();
+
+
         for (Transport transport:transports){
             printInfo(transport);
         }
